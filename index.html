@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry C. Hammer | Physics PhD Researcher</title>
+    <style>
+        /* Base styles */
+        :root {
+            --main-color: #0f4c81;
+            --accent-color: #1a75ff;
+            --light-accent: #e6f0ff;
+            --text-color: #333;
+            --light-text: #555;
+            --background: #fff;
+            --light-gray: #f5f5f5;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header and navigation */
+        header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--main-color);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+        
+        nav {
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Main content */
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--main-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--main-color);
+        }
+        
+        /* About section */
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        /* Research section */
+        .research-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .research-item:last-child {
+            border-bottom: none;
+        }
+        
+        .research-meta {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+        
+        /* Publications section */
+        .publication {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .publication:last-child {
+            border-bottom: none;
+        }
+        
+        .publication-title {
+            font-weight: bold;
+        }
+        
+        .publication-authors {
+            font-style: italic;
+            margin: 5px 0;
+        }
+        
+        .publication-info {
+            color: var(--light-text);
+        }
+        
+        /* Timeline section */
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-color);
+        }
+        
+        .timeline-item {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 9px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--main-color);
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .timeline-location {
+            color: var(--light-text);
+            font-style: italic;
+        }
+        
+        /* Skills section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skills-category {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skills-list {
+            list-style-type: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skills-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* Contact & Footer */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .contact-item i {
+            color: var(--main-color);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Henry C. Hammer</h1>
+            <p class="subtitle">PhD Student in Physics | Quantum Optics & Nanophotonics Researcher</p>
+            <p>University of Iowa, Department of Physics and Astronomy</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#talks">Talks & Posters</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/400/400" alt="Henry Hammer" class="profile-photo">
+                <div>
+                    <p>I am a Physics PhD student at the University of Iowa, working in the Quantum Light Control Lab under the guidance of Prof. Ravitej Uppu. My research focuses on quantum optics, nanophotonics, wavefront shaping, and light-matter interfaces for quantum technologies.</p>
+                    <p>I'm particularly interested in investigating the coherence properties of quantum emitters in heteroepitaxial light-matter interfaces for applications in photonic quantum communication and computation. My work involves nanofabrication, computational electrodynamics simulations, and cryogenic optical spectroscopy.</p>
+                    <p>Prior to my PhD, I completed my Bachelor of Science in Physics (Honors) and Mathematics at the University of Iowa, graduating with Highest Distinction. My undergraduate research experience included projects on wavefront shaping through multimode optical fibers and spatial division multiplexing using orbital angular momentum states.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="research" class="section">
+            <h2>Research Experience</h2>
+            
+            <div class="research-item">
+                <h3>Quantum Light Control Lab, University of Iowa</h3>
+                <p class="research-meta">Graduate Research Assistant | May 2023 - Present</p>
+                <p>As a graduate researcher in Prof. Ravitej Uppu's lab, I focus on:</p>
+                <ul>
+                    <li>Researching the coherence properties of quantum emitters in heteroepitaxial light-matter interfaces for applications in photonic quantum communication and computation</li>
+                    <li>Developing nanofabrication protocols for III-V semiconductor micropillars, nanobeams and photonic crystal waveguides using UV photolithography and electron-beam lithography</li>
+                    <li>Generating 3D computational electrodynamics simulations of quantum emitters in homogeneous and heterogeneous nanobeam waveguides</li>
+                    <li>Constructing cryogenic-compatible optical setups for performing resonance fluorescence spectroscopy at telecom-band wavelengths to investigate the coherence properties of Er³⁺ ions doped in bulk GaAs</li>
+                </ul>
+            </div>
+            
+            <div class="research-item">
+                <h3>Quantum Light Control Lab, University of Iowa</h3>
+                <p class="research-meta">Undergraduate Research Assistant | February 2021 - May 2023</p>
+                <p>As an undergraduate researcher, I:</p>
+                <ul>
+                    <li>Designed a complex wavefront shaping optical system utilizing a Digital Micromirror Device (DMD) to modulate the spatial wavefront and focus light through Multimode Fibers (MMFs)</li>
+                    <li>Implemented a feedback-based wavefront shaping algorithm in Python to study the dependence of wavefront shaping enhancement and frequency correlations on the core geometry of multimode fibers</li>
+                    <li>Constructed object-oriented Python scripts for automating data acquisition by integrating various lab devices and detectors</li>
+                </ul>
+            </div>
+            
+            <div class="research-item">
+                <h3>Spectrum Lab, Montana State University</h3>
+                <p class="research-meta">Quantum and Materials Physics REU Student | May 2022 - August 2022</p>
+                <p>During this summer research program, I:</p>
+                <ul>
+                    <li>Designed an optical system using spatial light modulators (SLMs) to perform spatial division multiplexing communication protocols via the combination of Dammann Vortex Gratings and 4-core multicore fibers (MCFs)</li>
+                    <li>Built a tabletop optical setup including a heat plate to quantify and simulate strong environmental turbulence</li>
+                    <li>Assessed the viability of active and passive OAM mode sorters for use in various communication protocols</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <p class="publication-title">"Effect of core geometry on frequency correlations and channel capacity of a multimode optical fiber"</p>
+                <p class="publication-authors">H. C. Hammer and R. Uppu</p>
+                <p class="publication-info">Optica Open Preprint, DOI: 10.1364/opticaopen.26325241.v1 (2024)</p>
+                <p><em>Highlighted preprint article on Optica Open; submitted to Adv. Phot. Research</em></p>
+            </div>
+        </section>
+        
+        <section id="talks" class="section">
+            <h2>Talks & Posters</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date">November 15, 2023</p>
+                    <p class="timeline-title">"Heterogeneous Light-matter Interfaces for Photonic Quantum Communication & Computation"</p>
+                    <p class="timeline-location">University of Iowa Department of Physics & Astronomy Condensed Matter Seminar, Iowa City, IA</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">May 5, 2023</p>
+                    <p class="timeline-title">"Effect of Core Geometry on the Channel Capacity of a Multimode Optical Fiber"</p>
+                    <p class="timeline-location">University of Iowa Department of Physics & Astronomy Awards Ceremony Seminar, Iowa City, IA</p>
+                    <p><em>Senior Thesis Talk</em></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">August 4, 2022</p>
+                    <p class="timeline-title">"Using Light's Orbital Angular Momentum to Transmit Information"</p>
+                    <p class="timeline-location">Montana State University Quantum and Materials Physics REU Symposium, Bozeman, MT</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">November 10, 2021</p>
+                    <p class="timeline-title">"Wavefront Shaping Through Circular & Non-circular Multimode Fiber Core Geometries"</p>
+                    <p class="timeline-location">University of Iowa Department of Physics & Astronomy Condensed Matter Seminar, Iowa City, IA</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">November 10, 2021</p>
+                    <p class="timeline-title">"Wavefront Shaping Through Circular & Non-circular Multimode Fiber Core Geometries"</p>
+                    <p class="timeline-location">University of Iowa Fall Undergraduate Research Festival, Iowa City, IA</p>
+                    <p><em>Received Andrew Nelson Undergraduate Research Prize for best Physics major poster</em></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">September 29, 2021</p>
+                    <p class="timeline-title">"Frequency Correlation Measurements of Wavefront-shaped Light in Round, Square, & Rectangular Multimode Fiber Core Geometries"</p>
+                    <p class="timeline-location">University of Iowa Department of Physics & Astronomy Summer Undergraduate Research Colloquium, Iowa City, IA</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="section">
+            <h2>Education</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date">August 2023 - January 2029 (Expected)</p>
+                    <p class="timeline-title">PhD in Physics</p>
+                    <p class="timeline-location">University of Iowa, Iowa City, IA</p>
+                    <p>Thesis Advisor: Prof. Ravitej Uppu</p>
+                    <p>GPA: 4.06/4.00</p>
+                    <p>Thesis Research Areas: Quantum Optics, Nanophotonics, Wavefront Shaping, Rare-earth Ions, Quantum Dots, Multimode Optical Fibers</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <p class="timeline-date">August 2019 - May 2023</p>
+                    <p class="timeline-title">Bachelor of Science - Physics (Honors), Mathematics</p>
+                    <p class="timeline-location">University of Iowa, Iowa City, IA</p>
+                    <p>Graduated With Highest Distinction</p>
+                    <p>GPA: 4.08/4.00 (Physics GPA: 4.11/4.00; Mathematics GPA: 4.01/4.00)</p>
+                    <p>Senior Thesis: Effect of core geometry on frequency correlations and channel capacity of a multimode optical fiber</p>
+                </div>
+            </div>
+            
+            <h3>Honors and Awards</h3>
+            <ul class="skills-list">
+                <li>Iowa Graduate Recruitment Fellowship (≈ $200,000 total), Fall 2023 - Present</li>
+                <li>James A. Van Allen Award for Excellence in Undergraduate Research, Spring 2023</li>
+                <li>Iowa Flagship Scholarship, Fall 2019 - Spring 2023</li>
+                <li>Charles E. Fahrney Scholarship, Fall 2019 - Spring 2023</li>
+                <li>University of Iowa President's List, Fall 2019 - Spring 2021, Fall 2022 - Spring 2023</li>
+                <li>University of Iowa Dean's List, Fall 2019, Fall 2021, Spring 2022</li>
+                <li>Andrew Nelson Undergraduate Research Prize, Fall 2021</li>
+                <li>Charles A. Wert Summer Research Grant, Summer 2021</li>
+                <li>Phi Beta Kappa, Spring 2021</li>
+            </ul>
+        </section>
+        
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skills-list">
+                        <li>Python (numpy, scipy, pyplot, MEEP/MPB)</li>
+                        <li>C</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Operating Systems</h3>
+                    <ul class="skills-list">
+                        <li>Linux (Ubuntu, Fedora)</li>
+                        <li>Windows</li>
+                        <li>OS X</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Applications/Typesetters</h3>
+                    <ul class="skills-list">
+                        <li>COMSOL</li>
+                        <li>MATLAB</li>
+                        <li>Mathematica</li>
+                        <li>LabVIEW</li>
+                        <li>Inkscape</li>
+                        <li>GIMP</li>
+                        <li>Microsoft Office</li>
+                        <li>LaTeX</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Graduate Level Coursework</h3>
+            <ul class="skills-list">
+                <li>Quantum Mechanics I-II</li>
+                <li>Classical Electrodynamics I-II</li>
+                <li>Classical Mechanics</li>
+                <li>Quantum Optics & Nanophotonics</li>
+                <li>Microfabrication & Thin Films</li>
+                <li>Semiconductor Physics</li>
+                <li>Advanced Condensed Matter</li>
+                <li>Independent Study: Photonic Crystals</li>
+            </ul>
+            
+            <h3>Student Memberships</h3>
+            <ul class="skills-list">
+                <li>American Physical Society</li>
+                <li>Optica</li>
+            </ul>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:henry-hammer@uiowa.edu">henry-hammer@uiowa.edu</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+16416806537">+1 (641) 680-6537</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">Current Address</span>
+                    <p>416 Iowa Ave. Apt. #222<br>Iowa City, IA 52240</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Henry C. Hammer. Last updated February 20, 2025.</p>
+    </footer>
+</body>
+</html>
