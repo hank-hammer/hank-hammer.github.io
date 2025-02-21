@@ -130,6 +130,37 @@
             border-radius: 5px;
         }
         
+        /* Research interests section */
+        .research-interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .interest-item {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .interest-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .interest-item h3 {
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+        
         /* Research section */
         .research-item {
             margin-bottom: 25px;
@@ -298,6 +329,10 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .research-interests-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -305,13 +340,14 @@
     <header>
         <div class="header-content">
             <h1>Henry C. Hammer</h1>
-            <p class="subtitle">PhD Student in Physics | Quantum Optics, Nanophotonics, Spin-photon Interfaces</p>
+            <p class="subtitle">PhD Student in Physics | Quantum Optics, Nanophotonics, Hybrid Spin-photon Interfaces</p>
             <p>University of Iowa, Department of Physics and Astronomy</p>
         </div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
+                <li><a href="#research-interests">Research Interests</a></li>
+                <li><a href="#research">Research Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#talks">Talks & Posters</a></li>
                 <li><a href="#education">Education</a></li>
@@ -330,6 +366,41 @@
                     <p>I am a Physics PhD student at the University of Iowa, working in the Quantum Light Control Lab under Prof. Ravitej Uppu. My research focuses on quantum optics, nanophotonics, wavefront shaping, and spin-photon interfaces for chip-integrated photonic quantum technologies.</p>
                     <p>I'm particularly interested in investigating the coherence properties of quantum emitters in heteroepitaxial light-matter interfaces for applications in photonic quantum communication and computation. My work involves nanofabrication, computational electrodynamics simulations, and cryogenic optical spectroscopy.</p>
                     <p>Prior to my PhD, I completed my Bachelor of Science in Physics (Honors) and Mathematics at the University of Iowa, graduating with Highest Distinction. My undergraduate research experience included projects on wavefront shaping through multimode optical fibers and spatial division multiplexing using orbital angular momentum states.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="research-interests" class="section">
+            <h2>Research Interests</h2>
+            <p>My research spans several interconnected areas in quantum photonics and nanoscale optics, with applications in quantum information science.</p>
+            
+            <div class="research-interests-container">
+                <div class="interest-item">
+                    <img src="https://via.placeholder.com/400x300?text=Quantum+Optics" alt="Quantum Optics">
+                    <h3>Quantum Optics</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quantum optics involves studying the quantum nature of light and its interaction with matter at the quantum level. My research focuses on single-photon sources, quantum interference, and photon-photon interactions that are essential for quantum information processing.</p>
+                    <p>This field provides the theoretical foundation for many quantum technologies including quantum computing, quantum cryptography, and quantum sensing.</p>
+                </div>
+                
+                <div class="interest-item">
+                    <img src="https://via.placeholder.com/400x300?text=Nanophotonics" alt="Nanophotonics">
+                    <h3>Nanophotonics</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nanophotonics explores how light behaves and interacts with materials at the nanoscale. My work involves designing and characterizing nanophotonic structures such as photonic crystal cavities, waveguides, and metamaterials that can enhance light-matter interactions.</p>
+                    <p>These engineered structures can be used to control the emission, propagation, and detection of quantum light with unprecedented precision.</p>
+                </div>
+                
+                <div class="interest-item">
+                    <img src="https://via.placeholder.com/400x300?text=Wavefront+Shaping" alt="Wavefront Shaping">
+                    <h3>Wavefront Shaping</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wavefront shaping is a technique that enables the control of complex optical fields by manipulating the spatial phase of light. My research investigates how wavefront shaping can be applied to multimode optical fibers for applications in quantum communication and optical computing.</p>
+                    <p>This technology has significant potential for overcoming limitations in quantum networks and creating robust optical interconnects for distributed quantum systems.</p>
+                </div>
+                
+                <div class="interest-item">
+                    <img src="https://via.placeholder.com/400x300?text=Spin-photon+Interfaces" alt="Spin-photon Interfaces">
+                    <h3>Spin-photon Interfaces</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Spin-photon interfaces connect the world of quantum optics with solid-state quantum information processing. My work explores how electron spins in semiconductor quantum dots and other solid-state systems can be efficiently coupled to photons.</p>
+                    <p>These interfaces form the building blocks for quantum repeaters, quantum memory, and ultimately a quantum internet that can connect quantum computers across long distances.</p>
                 </div>
             </div>
         </section>
@@ -499,6 +570,33 @@
                         <li>LaTeX</li>
                     </ul>
                 </div>
+                
+                <div class="skills-category">
+                    <h3>Hardware</h3>
+                    <ul class="skills-list">
+                        <li>Digital Micromirror Devices (DMDs)</li>
+                        <li>Spatial Light Modulators (SLMs)</li>
+                        <li>Avalanche Photodiodes and Single Photon Detectors</li>
+                        <li>Cryostats and Low-Temperature Equipment</li>
+                        <li>Lasers (CW, Pulsed, Tunable)</li>
+                        <li>Optical Fibers and Fiber-Optic Components</li>
+                        <li>Microcontrollers (Arduino, Raspberry Pi)</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Measurement Techniques</h3>
+                    <ul class="skills-list">
+                        <li>Resonance Fluorescence Spectroscopy</li>
+                        <li>Confocal Microscopy</li>
+                        <li>Hanbury Brown and Twiss Interferometry</li>
+                        <li>Time-Correlated Single Photon Counting</li>
+                        <li>Wavefront Shaping</li>
+                        <li>Electron-Beam Lithography</li>
+                        <li>Optical Characterization Techniques</li>
+                        <li>Lock-in Amplification</li>
+                    </ul>
+                </div>
             </div>
             
             <h3>Graduate Level Coursework</h3>
@@ -528,6 +626,7 @@
                     <span class="contact-label">Email</span>
                     <a href="mailto:henry-hammer@uiowa.edu">henry-hammer@uiowa.edu</a>
                 </div>
+                
             </div>
         </section>
     </main>
