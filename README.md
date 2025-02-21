@@ -1,1 +1,1 @@
-# Henry C. Hammer's Github Repository Powering hankchammer.com
+# Hank Hammer's Github Repository Powering hankchammer.com
