@@ -152,7 +152,7 @@
         
         .interest-item {
             flex: 1;
-            min-width: 450px;
+            min-width: 300px;  /* Changed from 450px */
             margin-bottom: 30px;
             background-color: var(--light-gray);
             border-radius: 8px;
@@ -329,13 +329,13 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             :root {
-                --side-padding: 24px;
+                --side-padding: 20px;
             }
             
             body {
                 padding: 16px var(--side-padding);
             }
-
+        
             .about-content {
                 flex-direction: column;
             }
@@ -355,20 +355,38 @@
             .research-interests-container {
                 flex-direction: column;
             }
+        
+            .interest-item {
+                min-width: calc(100% - 20px);
+                margin: 10px;
+            }
         }
-
+        
         @media (max-width: 480px) {
             :root {
-                --side-padding: 16px;
+                --side-padding: 12px;
             }
             
             body {
                 padding: 12px var(--side-padding);
             }
-
+        
             .interest-item {
                 min-width: 100%;
-                margin-bottom: 20px;
+                margin: 10px 0;
+                padding: 15px;
+            }
+        
+            .research-interests-container {
+                gap: 15px;
+            }
+        
+            h1 {
+                font-size: 2rem;
+            }
+        
+            .subtitle {
+                font-size: 1.1rem;
             }
         }
     </style>
